@@ -85,6 +85,11 @@ register(
     entry_point='robo_gym.envs:AvoidanceIros2021TestURRob',
 )
 
+register(
+    id='WayPointSim-v0',
+    entry_point='robo_gym.envs:WayPointSim',
+)
+
 
 
 

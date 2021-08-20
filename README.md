@@ -92,7 +92,7 @@ pip install robo-gym
 The Robot Server Side can be installed on the same machine running the Environment Side
 and/or on other multiple machines.
 
-Install [robo-gym-robot-servers](https://github.com/jr-robotics/robo-gym-robot-servers)
+Install [robo-gym-robot-servers](https://github.com/tinhangchui/robo-gym-robot-servers)
 following the instructions in the repository's README.
 
 # How to use
