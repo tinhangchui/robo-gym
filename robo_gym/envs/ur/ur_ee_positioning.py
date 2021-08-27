@@ -218,21 +218,21 @@ class EndEffectorPositioningUR(URBaseEnv):
         rs_state = self.client.get_state_msg().state_dict
 
         # Check if the length and keys of the Robot Server state received is correct
-        self._check_rs_state_keys(rs_state)
+        #self._check_rs_state_keys(rs_state)
 
         # Convert the initial state from Robot Server format to environment format
         state = self._robot_server_state_to_env_state(rs_state)
 
         # Check if the environment state is contained in the observation space
-        if not self.observation_space.contains(state):
-            raise InvalidStateError()
+        #if not self.observation_space.contains(state):
+            #raise InvalidStateError()
         
         # Check if current position is in the range of the initial joint positions
-        for joint in self.joint_positions.keys():
-            if not np.isclose(self.joint_positions[joint], rs_state[joint], atol=0.05):
-                raise InvalidStateError('Reset joint positions are not within defined range')
+        #for joint in self.joint_positions.keys():
+            #if not np.isclose(self.joint_positions[joint], rs_state[joint], atol=0.05):
+                #raise InvalidStateError('Reset joint positions are not within defined range')
             
-        return state
+        return rs_state
 
     def reward(self, rs_state, action) -> Tuple[float, bool, dict]:
         reward = 0

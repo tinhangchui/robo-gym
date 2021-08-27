@@ -182,8 +182,8 @@ class URBaseEnv(gym.Env):
         self.elapsed_steps += 1
 
         # Check if the action is contained in the action space
-        if not self.action_space.contains(action):
-            raise InvalidActionError()
+        #if not self.action_space.contains(action):
+            #raise InvalidActionError()
 
         # Add missing joints which were fixed at initialization
         action = self.add_fixed_joints(action)
@@ -199,8 +199,8 @@ class URBaseEnv(gym.Env):
         state = self._robot_server_state_to_env_state(rs_state)
 
         # Check if the environment state is contained in the observation space
-        if not self.observation_space.contains(state):
-            raise InvalidStateError()
+        #if not self.observation_space.contains(state):
+            #raise InvalidStateError()
 
         self.rs_state = rs_state
 
@@ -210,7 +210,7 @@ class URBaseEnv(gym.Env):
         reward, done, info = self.reward(rs_state=rs_state, action=action)
         if self.rs_state_to_info: info['rs_state'] = self.rs_state
 
-        return state, reward, done, info
+        return self.rs_state, reward, done, info
 
     def get_rs_state(self):
         return self.rs_state
@@ -258,14 +258,15 @@ class URBaseEnv(gym.Env):
         return len(self.get_robot_server_composition())
 
     def _check_rs_state_keys(self, rs_state) -> None:
-        keys = self.get_robot_server_composition()
-        if not len(keys) == len(rs_state.keys()):
-            raise InvalidStateError("Robot Server state keys to not match. Different lengths.")
+        return
+        #keys = self.get_robot_server_composition()
+        #if not len(keys) == len(rs_state.keys()):
+            #raise InvalidStateError("Robot Server state keys to not match. Different lengths.")
 
         
-        for key in keys:
-            if key not in rs_state.keys():
-                raise InvalidStateError("Robot Server state keys to not match")
+        #for key in keys:
+            #if key not in rs_state.keys():
+                #raise InvalidStateError("Robot Server state keys to not match")
 
 
     def _set_joint_positions(self, joint_positions) -> None:
