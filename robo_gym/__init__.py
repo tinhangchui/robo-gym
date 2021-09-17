@@ -90,6 +90,9 @@ register(
     entry_point='robo_gym.envs:WayPointSim',
 )
 
-
-
+# Beosim environment
+register(
+    id='BeoarmEEPosition-v0',
+    entry_point='robo_gym.envs:BeoarmEEPosition',
+)
 
