@@ -12,3 +12,6 @@ from robo_gym.envs.ur.ur_avoidance_basic import BasicAvoidanceURSim, BasicAvoida
 from robo_gym.envs.ur.ur_avoidance_iros import AvoidanceIros2021URSim, AvoidanceIros2021URRob
 from robo_gym.envs.ur.ur_avoidance_iros import AvoidanceIros2021TestURSim, AvoidanceIros2021TestURRob
 from robo_gym.envs.ur.ur_waypoint import WayPointSim, WayPointRobot
+
+# Beosim
+from robo_gym.envs.beoarm.beoarm_ee_positioning import BeoarmEEPosition
